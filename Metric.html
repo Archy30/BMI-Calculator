@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="box0"><STRONG>BMI CALCULATOR</STRONG>
+    </div>
+
+    <div class="box">
+        <div class="box1">
+            <div class="choose">
+                <a href="standard.html"><button class="btn">Standard</button></a>
+                <a href="Metric.html"><button class="btn">Metric</button></a>
+            </div>
+
+            <form>
+                <p class="sp">Height</p> 
+                <input type="number" placeholder="centimeter" id="h">
+                <p class="sp">Weight</p>
+                <input type="number" placeholder="kilograms" id="w">
+            </form>
+            <br/>
+            <button onclick="calc()">Sumbit</button>
+            <p id="ans">Your BMI : </p>
+        </div>
+
+        <div class="box2">
+            <p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
+            <p><ul><strong>BMI Categories: </strong></ul>
+                <li>Underweight = <18.5 </li>
+                <li>Normal weight = 18.5 - 24.9</li>
+                <li>Overweight = 25 - 29.9</li>
+                <li>Obesity = BMI of 30 or greater</li>
+            </p>
+        </div>
+    </div>
+    <script>
+        function calc(){
+            let height=document.getElementById("h").value;
+            let weight=document.getElementById("w").value;
+            let m=height/100;
+            let bmi=weight/(m*m);
+            bmi=bmi.toFixed(2);
+            let s="Your BMI : " + bmi;
+            document.getElementById("ans").innerHTML =s ;
+        }
+    </script>
+</body>
+</html>
